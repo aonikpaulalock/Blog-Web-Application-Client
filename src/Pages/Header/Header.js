@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom"
 import Logo from "../../Asset/Logo/Logo.png"
 import "../../Styles/Header.css"
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import Login from "../../Asset/Login/login.png"
+import ModalForm from './ModalForm';
+import ModalForm2 from './ModalForm2';
 const Header = () => {
+  const [toggle, setToggle] = useState(true)
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -23,23 +26,43 @@ const Header = () => {
           <ul class="navbar-nav mb-2 mb-lg-0" onClick={handleShow}>
             <span class="dropdown account-text">
               Create Account .
-              <Link to="/"> It's Free</Link>
+              <span className="its-free"> It's Free</span>
               <span className="dropdown-toggle"></span>
             </span>
           </ul>
-          <Modal show={show} onHide={handleClose}>
+
+          {/* SignUp-Modal */}
+
+          <Modal
+            show={show}
+            onHide={handleClose}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+          >
             <Modal.Header closeButton>
-              <Modal.Title>Modal heading</Modal.Title>
+              <Modal.Title>Let's learn, share & inspire each other with our passion for computer engineering. Sign up now 🤘🏼</Modal.Title>
             </Modal.Header>
-            <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
-                Close
-              </Button>
-              <Button variant="primary" onClick={handleClose}>
-                Save Changes
-              </Button>
-            </Modal.Footer>
+            <Modal.Body>
+              <div className="row">
+                <div className="col-md-6">
+                  {
+                   toggle ? <ModalForm/> : <ModalForm2/> 
+                  }
+                </div>
+                <div className="col-md-6">
+                  <div className="image-content">
+                    <h5 className="acount-heading">Already have an account ?
+                      <span onClick={()=>setToggle(false)}> Sign In</span>
+                    </h5>
+                    <img src={Login} alt="" className="img-fluid" />
+                   {
+                    toggle ? <p className="Privacy-policy">By signing up, you agree to our Terms & conditions, Privacy policy</p> : ""
+                   }
+                  </div>
+                </div>
+              </div>
+            </Modal.Body>
           </Modal>
         </div>
       </div>
