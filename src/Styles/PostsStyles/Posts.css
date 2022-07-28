@@ -1,0 +1,51 @@
+.input-location {
+  width: 100%;
+  margin: 5rem auto 0 4rem;
+  position: relative;
+}
+
+.location-input {
+  border: none;
+  width: 100%;
+  border-bottom: .1rem solid #B8B8B8;
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  color: #000000;
+  padding: 0 1rem 1.1rem 3rem;
+}
+
+.location-position {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.edit-position {
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+}
+
+.exclematory-position {
+  position: relative;
+  margin: 3.2rem auto 0 4rem;
+}
+
+.exclematory-text {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  color: #000000;
+  opacity: 0.5;
+  padding: 0 1rem 1.1rem 3rem;
+}
+.position-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

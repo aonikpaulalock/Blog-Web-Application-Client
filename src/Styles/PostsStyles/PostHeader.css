@@ -1,3 +1,10 @@
+.position-postheader {
+  position: sticky;
+  top: 78px;
+  z-index: 1;
+  background-color: #FFFFFF;
+  padding-top: 3rem;
+}
 .navbar-nav a {
   margin-right: 2rem !important;
   font-family: 'IBM Plex Sans';
@@ -41,5 +48,11 @@
 }
 .horizantal-line {
   border: 1px solid #E0E0E0;
-  margin-top: 2rem;
+  margin: 1.5rem 0;
+}
+.post-date {
+  margin-right: 4.4rem;
+}
+.post-company {
+  margin-right: 4.4rem;
 }
