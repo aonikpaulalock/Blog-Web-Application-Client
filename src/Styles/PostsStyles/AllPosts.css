@@ -1,0 +1,27 @@
+.card-title-name {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+  color: #000000;
+}
+
+.main-title {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2.2rem;
+  margin: 1rem 0;
+  line-height: 134.55%;
+  color: #000000;
+}
+
+.card-sub-title {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.9rem;
+  line-height: 134.17%;
+  color: #5C5C5C;
+}

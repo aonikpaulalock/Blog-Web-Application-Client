@@ -12,7 +12,7 @@ const PostHeader = () => {
           <ul className="navbar-nav d-flex flex-row">
             <li>
               <NavLink to="/post" as={Link}>All Posts
-                <sub>{posts.length}</sub>
+                <sup>({posts.length})</sup>
               </NavLink>
             </li>
             <li>

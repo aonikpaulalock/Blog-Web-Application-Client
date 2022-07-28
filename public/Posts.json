@@ -4,30 +4,30 @@
     "name": "✍️ Article",
     "img": "https://i.ibb.co/kB6LBpw/Article.png",
     "mainTitle": "What if famous brands had regular fonts? Meet RegulaBrands!",
-    "subTitle": "What if famous brands had regular fonts? Meet RegulaBrands!",
-    "user": "Sarthak Kamra",
-    "userImg": "https: //i.ibb.co/WFybMpv/Article-User.png",
+    "subTitle": "I've worked in UX for the better part of a decade. From now on, I plan to rei…",
+    "userImg": "https://i.ibb.co/WFybMpv/Article-User.png",
+    "user":"Sarthak Kamra",
     "views": "1.4k views"
   },
   {
     "id": 2,
     "name": "🔬️ Education",
-    "img": "https: //i.ibb.co/kq6LT3H/Education.png",
+    "img": "https://i.ibb.co/kq6LT3H/Education.png",
     "mainTitle": "Tax Benefits for Investment under National Pension Scheme launched by Government",
     "subTitle": "I've worked in UX for the better part of a decade. From now on, I plan to rei…",
     "user": "Sarah West",
-    "userImg": "https: //i.ibb.co/72Z7j7w/Education-User.png",
+    "userImg": "https://i.ibb.co/72Z7j7w/Education-User.png",
     "views": "1.5k views"
   },
   {
     "id": 3,
     "name": "🗓️ Meetup",
-    "img": "https: //i.ibb.co/5jL7Tb8/Meetup.png",
+    "img": "https://i.ibb.co/5jL7Tb8/Meetup.png",
     "mainTitle": "Finance & Investment Elite Social Mixer @Lujiazui",
     "date": "Fri, 29 July, 2022",
     "location": "Ahmedabad, India",
     "user": "Ronal Jones",
-    "userImg": "https: //i.ibb.co/xDVPK9h/Meetup-User.png",
+    "userImg": "https://i.ibb.co/xDVPK9h/Meetup-User.png",
     "views": "1.6k views"
   },
   {
@@ -37,7 +37,7 @@
     "company": "Innovaccer Analytics Private Ltd.",
     "location": "Noida, India",
     "user": "Joseph Gray",
-    "userImg": "https: //i.ibb.co/RzVBs66/Login-User.png",
+    "userImg": "https://i.ibb.co/RzVBs66/Login-User.png",
     "views": "1.7k views"
   }
 ]
