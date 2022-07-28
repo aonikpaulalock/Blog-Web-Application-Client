@@ -1,0 +1,45 @@
+.navbar-nav a {
+  margin-right: 2rem !important;
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.1rem;
+  color: #8A8A8A;
+}
+
+.post-button {
+  width: 133px;
+  height: 36px;
+  background: #EDEEF0;
+  border-radius: .4rem;
+  border: 0;
+  outline: 0;
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #000000;
+  padding: .8rem 1.2rem;
+}
+
+.group-button {
+  width: 133px;
+  height: 36px;
+  background: #2F6CE5;
+  border-radius: .4rem;
+  border: 0;
+  outline: 0;
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #FFFFFF;
+  padding: .8rem 1.2rem;
+}
+.horizantal-line {
+  border: 1px solid #E0E0E0;
+  margin-top: 2rem;
+}
