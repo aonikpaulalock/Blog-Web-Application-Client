@@ -17,15 +17,15 @@ const Header = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
-    <nav class="navbar navbar-expand-lg navber-bg sticky-top">
+    <nav class="navbar navbar-expand-lg navber-bg sticky-top container-fluid">
       <div class="container">
         <Link class="navbar-brand" to="/">
-          <img src={Logo} alt="" />
+          <img src={Logo} alt="" className="img-fluid" />
         </Link>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent"> <form class="mt-md-0 mt-5 mx-lg-auto form-width ">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"> <form class="mt-md-0 mt-5 mx-lg-auto form-width ps-sm-0 ps-3">
           <input class="form-control rounded-pill input-field" type="search" placeholder="Search for your favorite groups in ATG" aria-label="Search" />
           <span className="search-position">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -35,7 +35,7 @@ const Header = () => {
         </form>
           {
             !user ?
-              <ul class="navbar-nav mb-2 mb-lg-0" onClick={handleShow}>
+              <ul class="navbar-nav mb-2 mb-lg-0 ps-sm-0 ps-4" onClick={handleShow}>
                 <span class="dropdown account-text">
                   Create Account .
                   <span className="its-free"> It's Free</span>

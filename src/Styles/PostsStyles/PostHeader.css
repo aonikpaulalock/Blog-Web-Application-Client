@@ -1,4 +1,5 @@
 .position-postheader {
+  width: 100%;
   position: sticky;
   top: 78px;
   z-index: 1;
@@ -88,7 +89,7 @@
     font-size: 50%
   }
   .position-postheader {
-    top: 65px;
+    top: 60px;
     padding-top: 2rem;
 }
 }

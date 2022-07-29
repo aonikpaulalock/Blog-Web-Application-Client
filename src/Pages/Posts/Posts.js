@@ -10,10 +10,10 @@ const Posts = () => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-lg-8">
+        <div className="col-lg-8 col-12">
           <Outlet />
         </div>
-        <div className="col-lg-4">
+        <div className="col-lg-4 col-md-8">
           <div className="input-location">
             <input type="email" className="from-control location-input" placeholder="Noida , India" />
             <span className="location-position">

@@ -104,15 +104,16 @@
 
 @media (max-width:770px) {
   .location-input {
-    
     width: 70%;
-}
-.edit-position {
-  bottom:25%;
-  right: 30%;
-}
-.follow-button {
-  width: 80%;
-  margin: 0 0 2.5rem 0;
-}
+  }
+
+  .edit-position {
+    bottom: 25%;
+    right: 30%;
+  }
+
+  .follow-button {
+    width: 80%;
+    margin: 0 0 2.5rem 0;
+  }
 }
