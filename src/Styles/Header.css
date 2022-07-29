@@ -198,8 +198,23 @@
     margin-top: 1.8rem;
   }
 }
+@media (max-width:580px) {
+  .modal-header .btn-close {
+    padding: 0rem !important;
+    margin-top: 0rem !important;
+    margin-right: 1rem;
+    background-color: #ffffff;
+    font-size: 1.8rem;
+    width: 70px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  .image-content {
+    display: none;
+  }
+}
 @media (max-width:450px) {
   .form-width {
-    width:100%;
+    width: 100%;
   }
 }
