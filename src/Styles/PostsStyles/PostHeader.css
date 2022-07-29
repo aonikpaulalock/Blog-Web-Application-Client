@@ -5,6 +5,7 @@
   background-color: #FFFFFF;
   padding-top: 3rem;
 }
+
 .navbar-nav a {
   margin-right: 2rem !important;
   font-family: 'IBM Plex Sans';
@@ -17,7 +18,7 @@
 
 .post-button {
   width: 133px;
-  height: 36px;
+  height: 38px;
   background: #EDEEF0;
   border-radius: .4rem;
   border: 0;
@@ -28,7 +29,7 @@
   font-size: 1.5rem;
   line-height: 2rem;
   color: #000000;
-  padding: .8rem 1.2rem;
+  padding: 1rem 1.2rem;
 }
 
 .group-button {
@@ -46,13 +47,29 @@
   color: #FFFFFF;
   padding: .8rem 1.2rem;
 }
+
+.leave-group-button {
+  background: #FFFFFF;
+  border: .1rem solid #989899;
+  border-radius: .4rem;
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #6A6A6B;
+  padding: .8rem 1.2rem;
+}
+
 .horizantal-line {
   border: 1px solid #E0E0E0;
   margin: 1.5rem 0;
 }
+
 .post-date {
   margin-right: 4.4rem;
 }
+
 .post-company {
   margin-right: 4.4rem;
 }

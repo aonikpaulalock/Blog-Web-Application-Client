@@ -28,6 +28,7 @@ const ModalForm2 = () => {
   }
   if (user) {
     // navigate(from, { replace: true })
+    console.log(user);
   }
   const handleEmail = (e) => {
     setEmail(e.target.value);

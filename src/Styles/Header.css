@@ -137,11 +137,12 @@
 }
 
 .acount-heading span {
-  color: #2F6CE5 ;
+  color: #2F6CE5;
   font-weight: 600;
   cursor: pointer;
 }
-.forget-password{
+
+.forget-password {
   font-family: 'IBM Plex Sans';
   font-style: normal;
   font-weight: 500;
@@ -151,5 +152,22 @@
   letter-spacing: -0.008rem;
   color: #000000;
   margin-top: 2.3rem;
+  cursor: pointer;
+}
+
+.signout {
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+}
+
+.userName {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem !important;
+  line-height: 1.8rem;
+  color: #000000;
+  margin-bottom: 0;
   cursor: pointer;
 }
