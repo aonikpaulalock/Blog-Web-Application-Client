@@ -1,6 +1,7 @@
 import React from 'react';
 const educations = [
   {
+    id:1,
     name: "🔬️ Education",
     img: "https://i.ibb.co/kq6LT3H/Education.png",
     mainTitle: "Tax Benefits for Investment under National Pension Scheme launched by Government",

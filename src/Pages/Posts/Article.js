@@ -1,7 +1,7 @@
 import React from 'react';
-import useData from '../../Hooks/useData';
 const articles = [
   {
+    id: 1,
     name: "✍️ Article",
     img: "https://i.ibb.co/kB6LBpw/Article.png",
     mainTitle: "What if famous brands had regular fonts? Meet RegulaBrands!",

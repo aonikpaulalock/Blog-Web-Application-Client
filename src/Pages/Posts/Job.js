@@ -1,6 +1,7 @@
 import React from 'react';
 const jobs = [
   {
+    id: 1,
     name: "💼️ Job",
     mainTitle: "Software Developer",
     company: "Innovaccer Analytics Private Ltd.",

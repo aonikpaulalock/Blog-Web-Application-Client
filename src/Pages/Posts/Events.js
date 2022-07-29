@@ -1,6 +1,7 @@
 import React from 'react';
 const events = [
   {
+    id:1,
     name: "🗓️ Meetup",
     img: "https://i.ibb.co/5jL7Tb8/Meetup.png",
     mainTitle: "Finance & Investment Elite Social Mixer @Lujiazui",

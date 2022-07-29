@@ -1,6 +1,14 @@
-# Getting Started with Create React App
+# Getting Started with Intern Task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Live Site
+This project was bootstrapped with (https://intern-task-2fb2e.web.app).
+
+# Used Technology
+* React
+* React-Router
+* Bootstrap
+* React-Bootstrap
+* Firebase
 
 ## Available Scripts
 
