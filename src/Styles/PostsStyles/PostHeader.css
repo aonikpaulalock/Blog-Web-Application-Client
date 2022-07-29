@@ -73,3 +73,22 @@
 .post-company {
   margin-right: 4.4rem;
 }
+
+@media (max-width:990px) {
+  html {
+    font-size: 55%
+  }
+  .position-postheader {
+    top: 65px;
+    padding-top: 2rem;
+}
+}
+@media (max-width:770px) {
+  html {
+    font-size: 50%
+  }
+  .position-postheader {
+    top: 65px;
+    padding-top: 2rem;
+}
+}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-bootstrap';
 import { Link } from "react-router-dom"
 import "../../Styles/PostsStyles/PostHeader.css"
@@ -10,10 +10,10 @@ const PostHeader = () => {
   const [user] = useAuthState(auth)
   return (
     <div className="container position-postheader">
-      <div className="row">
-        <div className="col-md-8">
+      <div className="row gap-lg-0 gap-3">
+        <div className="col-lg-8 col-12">
           <ul className="navbar-nav d-flex flex-row">
-            <li>
+          <li>
               <NavLink to="/post" as={Link}>All Posts
                 <sup>({posts.length})</sup>
               </NavLink>
@@ -32,7 +32,7 @@ const PostHeader = () => {
             </li>
           </ul>
         </div>
-        <div className="col-md-4 d-flex justify-content-end">
+        <div className="col-lg-4 d-lg-flex justify-content-lg-end col-12">
           <div>
             <button className="post-button me-4">
               Write a Post

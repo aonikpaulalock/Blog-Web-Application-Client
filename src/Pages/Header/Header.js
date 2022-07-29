@@ -27,6 +27,11 @@ const Header = () => {
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent"> <form class="mt-md-0 mt-5 mx-lg-auto form-width ">
           <input class="form-control rounded-pill input-field" type="search" placeholder="Search for your favorite groups in ATG" aria-label="Search" />
+          <span className="search-position">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg>
+          </span>
         </form>
           {
             !user ?
@@ -47,7 +52,7 @@ const Header = () => {
                   }
                   {
                     user?.photoURL === null ?
-                      <img src={userImg} alt="UserPhoto"  className="mx-4"/> :
+                      <img src={userImg} alt="UserPhoto" className="mx-4" /> :
                       <img src={user.photoURL} alt="UserPhoto" className="mx-4" />
                   }
 

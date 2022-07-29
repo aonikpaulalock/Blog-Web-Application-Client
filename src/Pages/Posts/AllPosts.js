@@ -9,7 +9,7 @@ const AllPosts = () => {
         {
           posts.map(post =>
             <div class="card mb-3" key={post.id}>
-              <img class="card-img-top" src={post.img} alt="" />
+              <img class="card-img-top img-fluid" src={post.img} alt="" />
               <div class="card-body">
                 <h5 class="card-title-name">{post.name}</h5>
                 <div className="d-flex justify-content-between align-items-center">

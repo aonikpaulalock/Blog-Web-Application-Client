@@ -1,9 +1,15 @@
 import React from 'react';
+import useData from '../../Hooks/useData';
 
 const Article = () => {
+  const [posts] = useData()
+  console.log(posts);
   return (
     <div>
-      <h1>Article</h1>
+      {/* { 
+        posts
+        .filter(post => post.name === "✍️ Article").map(post => <li key={post.id}>{post.name}</li>) 
+      } */}
     </div>
   );
 };

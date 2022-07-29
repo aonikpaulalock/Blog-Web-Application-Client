@@ -44,8 +44,75 @@
   opacity: 0.5;
   padding: 0 1rem 1.1rem 3rem;
 }
+
 .position-icon {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.group-content {
+  margin: 5rem auto 0 4rem;
+}
+
+.group-mainHeading {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  letter-spacing: 0.002rem;
+  text-transform: uppercase;
+  color: #000000;
+  margin-bottom: 2rem;
+}
+
+.group-heading {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500 !important;
+  font-size: 1.5rem !important;
+  line-height: 1.8rem;
+  color: #000000;
+  margin-bottom: 0;
+  cursor: pointer;
+  margin-left: 2rem;
+}
+
+.group-flex {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.6rem;
+}
+
+.follow-button {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  background: #FFFFFF;
+  border: 0.1rem solid #989899;
+  border-radius: 0.4rem;
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #6A6A6B;
+  padding: 0.6rem 1.2rem;
+}
+
+
+@media (max-width:770px) {
+  .location-input {
+    
+    width: 70%;
+}
+.edit-position {
+  bottom:25%;
+  right: 30%;
+}
+.follow-button {
+  width: 80%;
+  margin: 0 0 2.5rem 0;
+}
 }
