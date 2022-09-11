@@ -7,6 +7,7 @@ import auth from '../../Firebase.init';
 import "../../Styles/AddBlogs.css"
 const AddBlogs = ({ handleClose }) => {
   const [user] = useAuthState(auth)
+  console.log(user);
   const { register, formState: { errors }, handleSubmit, reset } = useForm();
   const imagekey = "d56f1c4be5a28924ce053f9e7a88d941";
   const onSubmit = async (data) => {
@@ -23,7 +24,7 @@ const AddBlogs = ({ handleClose }) => {
         if (result.success) {
           const img = result.data.url;
           const blogs = {
-            email:data.email,
+            email: user?.email,
             user: data.userName,
             userImg: data.userImg,
             img: img,
@@ -56,22 +57,23 @@ const AddBlogs = ({ handleClose }) => {
   }
   return (
     <Form className="from-back ms-3 ms-0" onSubmit={handleSubmit(onSubmit)}>
-        <input class="input-feild"
-          type="text"
-          placeholder={user?.email}
-          readOnly
-        />
-        <input class="input-feild"
-          type="text"
-          placeholder="Enter Your Name"
-          autoComplete='off'
-          {...register("userName", {
-            required: {
-              value: true,
-              message: 'Name is Required'
-            }
-          })}
-        />
+      <input class="input-feild"
+        type="email"
+        placeholder={user?.email}
+        readOnly
+        {...register("email")}
+      />
+      <input class="input-feild"
+        type="text"
+        placeholder="Enter Your Name"
+        autoComplete='off'
+        {...register("userName", {
+          required: {
+            value: true,
+            message: 'Name is Required'
+          }
+        })}
+      />
       <label className="text-center">
         {errors.name?.type === 'required' && <span className="text-danger">{errors.name?.message}</span>}
       </label>

@@ -7,10 +7,11 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase.init';
 import add from "../../Asset/Posts/addBlogs.png"
 import AddBlogs from './AddBlogs';
+import useUserBlog from '../../Hooks/useUserBlog';
 const PostHeader = () => {
-
-  const [posts] = useData()
   const [user] = useAuthState(auth)
+  const [Blogs]  = useUserBlog(user)
+  const [posts] = useData()
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -48,7 +49,7 @@ const PostHeader = () => {
               </li>
               <li>
                 <NavLink to="/post/add" as={Link}>Your Blogs
-                  <sup>({posts.length})</sup>
+                  <sup>({Blogs.length})</sup>
                 </NavLink>
               </li>
             </ul>
