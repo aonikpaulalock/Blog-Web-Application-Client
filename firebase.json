@@ -9,8 +9,12 @@
     "rewrites": [
       {
         "source": "**",
-        "destination": "/index.html"
+        "destination": "/index.html",
+        "source":" everything Okk"
       }
     ]
   }
 }
+
+
+

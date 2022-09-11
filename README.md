@@ -1,9 +1,9 @@
-# Getting Started with Intern Task
+## Getting Started with Intern Task
 
-# Live Site
-This project was bootstrapped with (https://intern-task-2fb2e.web.app).
+## Live Site
+# https://intern-task-2fb2e.web.app
 
-# Used Technology
+## Used Technology
 * React
 * React-Router
 * Bootstrap
