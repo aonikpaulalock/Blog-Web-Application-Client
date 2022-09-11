@@ -1,0 +1,30 @@
+.input-feild {
+  width: 95%;
+  padding:1.5rem 2rem ;
+  border: .1rem solid var(--subText-primary-color);
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 5px;
+  margin: .5rem auto;
+}
+.input-feild:focus {
+  outline: none;
+/* color: rgb(95, 95, 95); */
+}
+.input-file {
+  width: 95%;
+  padding:1.2rem 1.8rem ;
+}
+.form-select {
+  display: block;
+  width: 95%;
+  font-size: 1.5rem;
+  color: #727272;
+  padding: 1.6rem 2rem;
+  background-position: right center !important;
+  background-size: 16px 8px !important;
+  margin: 0 !important ;
+}

@@ -14,18 +14,19 @@
   line-height: 1.8rem;
   color: #000000;
   padding: 0 1rem 1.1rem 3rem;
+  border-radius: .5rem;
 }
 
 .location-position {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 28%;
+  left: 3%;
 }
 
 .edit-position {
   position: absolute;
-  bottom: 15px;
-  right: 0;
+  bottom: 37%;
+  right: 5%;
 }
 
 .exclematory-position {

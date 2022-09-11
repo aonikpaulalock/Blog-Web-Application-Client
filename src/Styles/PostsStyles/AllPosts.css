@@ -20,7 +20,17 @@
   line-height: 134.55%;
   color: #000000;
 }
-
+.svg-dropdown {
+  border: 0 !important;
+  outline: 0 !important;
+  background-color: transparent !important;
+}
+.dropdown-menu {
+  padding: 7px !important;
+  top: 0px;
+  left: -20px !important;
+  z-index: 2 !important;
+}
 .card-sub-title {
   font-family: 'IBM Plex Sans';
   font-style: normal;
@@ -29,6 +39,9 @@
   line-height: 134.17%;
   color: #5C5C5C;
   margin-bottom: 3.1rem;
+}
+.dropdown-item {
+  cursor: pointer !important;
 }
 
 .userName {

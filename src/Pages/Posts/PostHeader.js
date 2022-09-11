@@ -1,40 +1,97 @@
-import React from 'react';
-import { NavLink } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Modal, NavLink } from 'react-bootstrap';
 import { Link } from "react-router-dom"
 import "../../Styles/PostsStyles/PostHeader.css"
 import useData from '../../Hooks/useData';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase.init';
+import add from "../../Asset/Posts/addBlogs.png"
+import AddBlogs from './AddBlogs';
 const PostHeader = () => {
+
   const [posts] = useData()
   const [user] = useAuthState(auth)
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <div className="container position-postheader">
       <div className="row gap-lg-0 gap-3">
         <div className="col-lg-8 col-12">
-          <ul className="navbar-nav d-flex flex-row">
-          <li>
-              <NavLink to="/post" as={Link}>All Posts
-                <sup>({posts.length})</sup>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/post/article" as={Link} >Article</NavLink>
-            </li>
-            <li>
-              <NavLink to="/post/events" as={Link}>Events</NavLink>
-            </li>
-            <li>
-              <NavLink to="/post/education" as={Link}>Education</NavLink>
-            </li>
-            <li>
-              <NavLink to="/post/jobs" as={Link}>Jobs</NavLink>
-            </li>
-          </ul>
+          {
+            user &&
+            <ul className="navbar-nav d-flex flex-row">
+              <li>
+                <NavLink to="/post" as={Link}>All
+                  <sup>({posts.length})</sup>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/post/article" as={Link} >Article
+                  <sup>({posts.filter(post => post.name?.includes("✍️ Article")).length})</sup>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/post/events" as={Link}>Events
+                  <sup>({posts.filter(post => post.name?.includes("🗓️ Meetup")).length})</sup>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/post/education" as={Link}>Education
+                  <sup>({posts.filter(post => post.name?.includes("🔬️ Education")).length})</sup>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/post/jobs" as={Link}>Jobs
+                  <sup>({posts.filter(post => post.name?.includes("💼️ Job")).length})</sup>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="/post/add" as={Link}>Your Blogs
+                  <sup>({posts.length})</sup>
+                </NavLink>
+              </li>
+            </ul>
+          }
+          {
+            !user &&
+            <ul className="navbar-nav d-flex flex-row">
+              <li>
+                <NavLink to="#" as={Link}>All Posts
+                  <sup>({0})</sup>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="#" as={Link} >Article
+                  <sup>({0})</sup>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="#" as={Link}>Events
+                  <sup>({0})</sup>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="#" as={Link}>Education
+                  <sup>({0})</sup>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="#" as={Link}>Jobs
+                  <sup>({0})</sup>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="#" as={Link}>Your Blogs
+                  <sup>({0})</sup>
+                </NavLink>
+              </li>
+            </ul>
+          }
         </div>
         <div className="col-lg-4 d-lg-flex justify-content-lg-end col-12">
           <div>
-            <button className="post-button me-4">
+            <button className="post-button me-4" onClick={user && handleShow}>
               Write a Post
             </button>
             {
@@ -54,11 +111,34 @@ const PostHeader = () => {
                   </svg>
                   Leave Group
                 </button>
-
             }
           </div>
         </div>
         <hr className="horizantal-line" />
+        <Modal
+          show={show}
+          onHide={handleClose}
+          size="lg"
+          aria-labelledby="contained-modal-title-vcenter"
+          centered
+        >
+          <Modal.Header closeButton>
+            <Modal.Title>Let's learn, share & inspire each other with our passion for blogs please share your valuable blogs 🤘🏼</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div className="row">
+              <div className="col-md-7">
+                <AddBlogs handleClose={handleClose} />
+              </div>
+              <div className="col-md-5 d-flex justify-content-center align-items-center">
+                <div className="">
+                  <img src={add} alt="" className="img-fluid" />
+                </div>
+              </div>
+            </div>
+          </Modal.Body>
+        </Modal>
+
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 const useData = () => {
   const [posts, setPosts] = useState([])
   useEffect(() => {
-    fetch("Posts.json")
+    fetch("http://localhost:4200/posts")
       .then(res => res.json())
       .then(data => setPosts(data))
   }, [])

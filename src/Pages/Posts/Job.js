@@ -1,76 +1,50 @@
 import React from 'react';
-const jobs = [
-  {
-    id: 1,
-    name: "💼️ Job",
-    mainTitle: "Software Developer",
-    company: "Innovaccer Analytics Private Ltd.",
-    location2: "Noida, India",
-    user: "Joseph Gray",
-    userImg: "https://i.ibb.co/RzVBs66/Login-User.png",
-    views: "1.7k views"
-  }
-]
+import useData from '../../Hooks/useData';
 const Education = () => {
+  const [posts] = useData()
   return (
     <div className="container">
       <div className="col">
         {
-          jobs.map(job =>
-            <div className="card mb-3" key={job.id}>
-              <img className="card-img-top img-fluid" src={job.img} alt="" />
-              <div className="card-body">
-                <h5 className="card-title-name">{job.name}</h5>
-                <div className="d-flex justify-content-between align-items-center">
-                  <h1 className="main-title">{job.mainTitle}</h1>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#000000" className="bi bi-three-dots" viewBox="0 0 16 16">
-                    <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
-                  </svg>
-                </div>
-                <div className="d-flex">
-                  <h5 className="post-date">
-                    {job.date}
-                  </h5>
-                  <h5 className="post-location">
-                    {job.location1}
-                  </h5>
-                </div>
-                <div className="d-flex">
-                  <h5 className="post-company">
-                    {job.company}
-                  </h5>
-                  <h5 className="post-location2">
-                    {job.location2}
-                  </h5>
-                </div>
-                <h6 className="card-sub-title">{job.subTitle}</h6>
-                <div className="d-flex justify-content-between align-items-center">
-                  <div className="d-flex align-items-center">
-                    <img src={job.userImg} alt="" />
-                    <h5 className="userName">{job.user}</h5>
+          posts.filter(post => post.name?.includes("💼️ Job"))
+            .map(job =>
+              <div className="card mb-3" key={job.id}>
+                <img className="card-img-top img-fluid" src={job.img} alt="" />
+                <div className="card-body">
+                  <h5 className="card-title-name">{job.name}</h5>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <h1 className="main-title">{job.mainTitle}</h1>
                   </div>
-                  <div>
+                  <h6 className="card-sub-title">{job.subTitle}</h6>
+                  <div className="d-flex justify-content-between align-items-center">
                     <div className="d-flex align-items-center">
-                      <h6>
-                        <span className="me-2">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-eye" viewBox="0 0 16 16">
-                            <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
-                            <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" />
-                          </svg>
-                        </span>
-                        {job.views}
-                      </h6>
-                      <h6 className="svg-gap">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-share" viewBox="0 0 16 16">
-                          <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z" />
+                      <img src={job.userImg} alt="" />
+                      <h5 className="userName">{job.user}</h5>
+                    </div>
+                    <div class="dropdown">
+                      <button class="svg-dropdown" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#000000" className="bi bi-three-dots " viewBox="0 0 16 16">
+                          <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
                         </svg>
-                      </h6>
+                      </button>
+                      <div class="dropdown-menu border-0 shadow " aria-labelledby="dropdownMenuButton">
+                        <h5 class="dropdown-item d-flex align-items-center fw-semibold text-muted">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="rgb(95, 95, 95)" class="bi bi-pencil-square me-3" viewBox="0 0 16 16">
+                            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+                            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+                          </svg>
+                          Edit</h5>
+                        <h5 class="dropdown-item d-flex align-items-center fw-semibold text-muted">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="rgb(255, 81, 81)" class="bi bi-archive-fill me-3" viewBox="0 0 16 16">
+                            <path d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z" />
+                          </svg>
+                          Delete</h5>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          )
+            )
         }
       </div>
     </div>

@@ -1,0 +1,11 @@
+.overlay {
+  /* background-color: #EFEFEF; */
+  color: rgb(26, 26, 26);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: .7;
+  filter: alpha(opacity=50);
+}

@@ -4,19 +4,20 @@ import Facebook from "../../Asset/Logo/Facebook-f_Logo-Blue-Logo.wine.svg"
 import "../../Styles/PostsStyles/AuthenticationProvider.css"
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase.init';
-const AuthenticationProvider = () => {
+import Loading from '../Shared/Loading';
+const AuthenticationProvider = ({handleClose}) => {
   let errorStore;
 
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
 
   if (error) {
-    errorStore = <p className="text-danger">Error: {error?.message}</p>
+    errorStore = <p className="text-danger font-semibold text-center my-2 fs-5">Error: {error?.message}</p>
   }
   if (user) {
-    console.log(user)
+    handleClose(true)
   }
   if (loading) {
-    return;
+    return <Loading />;
   }
   return (
     <div>

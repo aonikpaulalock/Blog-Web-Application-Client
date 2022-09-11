@@ -10,7 +10,16 @@ import Events from './Pages/Posts/Events';
 import Education from './Pages/Posts/Education';
 import Job from './Pages/Posts/Job';
 import Posts from './Pages/Posts/Posts';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from './Firebase.init';
+import RequireAuth from './Pages/Shared/RequireAuth';
+import SigninModal from './Pages/Header/SigninModal';
+import AddBlogs from './Pages/Posts/AddBlogs';
+import UserAded from './Pages/Posts/UserAded';
 function App() {
+  const [user] = useAuthState(auth)
   return (
     <>
       <Header />
@@ -23,8 +32,11 @@ function App() {
           <Route path="events" element={<Events />}></Route>
           <Route path="education" element={<Education />}></Route>
           <Route path="jobs" element={<Job />}></Route>
+        <Route path="add" element={<UserAded/>}></Route>
         </Route>
       </Routes>
+
+      <ToastContainer />
     </>
   );
 }

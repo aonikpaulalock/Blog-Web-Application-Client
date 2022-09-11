@@ -5,10 +5,11 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase.init';
 import { reload } from 'firebase/auth';
-const ModalForm = () => {
+import Loading from '../Shared/Loading';
+const ModalForm = ({handleClose}) => {
   const [error, setError] = useState('')
-  const [updateProfile] = useUpdateProfile(auth);
-  const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true })
+  const [updateProfile,updating] = useUpdateProfile(auth);
+  const [createUserWithEmailAndPassword, user,loading] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true })
 
   const handleSubmit = async event => {
     event.preventDefault()
@@ -27,14 +28,18 @@ const ModalForm = () => {
       setError(" Minimum type eight charchter ")
       return;
     }
+
     createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName: name })
     event.target.reset()
-    user.reload()
+    reload()
   }
-
+    if (loading || updating) {
+      return <Loading />
+    }
   if (user) {
-    console.log(user);
+    handleClose(true)
+    // console.log(user)
   }
   return (
     <Form className="form-container" onSubmit={handleSubmit}>
@@ -47,7 +52,10 @@ const ModalForm = () => {
         />
       </Form.Group>
       <Form.Group className="input-name">
-        <Form.Control type="email" name="email" placeholder="Enter Email"
+        <Form.Control
+          type="email"
+          name="email"
+          placeholder="Enter Email"
           className="input"
           required
           autoComplete='off'
@@ -71,7 +79,7 @@ const ModalForm = () => {
       </Form.Group>
       <h6 className='text-center text-danger mt-3 mb-0 fs-5'>{error}</h6>
       <button type="submit" className="Signup-Button">Sign up</button>
-      <AuthenticationProvider />
+      <AuthenticationProvider handleClose={handleClose} />
     </Form>
   );
 };

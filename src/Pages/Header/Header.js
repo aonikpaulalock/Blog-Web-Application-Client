@@ -2,17 +2,13 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom"
 import Logo from "../../Asset/Logo/Logo.png"
 import "../../Styles/Header.css"
-import Modal from 'react-bootstrap/Modal';
-import Login from "../../Asset/Login/login.png"
-import ModalForm from './ModalForm';
-import ModalForm2 from './ModalForm2';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../Firebase.init';
 import { signOut } from 'firebase/auth';
 import userImg from "../../Asset/Posts/Login-User.png"
+import SigninModal from './SigninModal';
 const Header = () => {
   const [user] = useAuthState(auth)
-  const [toggle, setToggle] = useState(true)
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -34,71 +30,40 @@ const Header = () => {
           </span>
         </form>
           {
-            !user ?
-              <ul className="navbar-nav mb-2 mb-lg-0 ps-sm-0 ps-4" onClick={handleShow}>
-                <span className="dropdown account-text">
-                  Create Account .
-                  <span className="its-free"> It's Free</span>
-                  <span className="dropdown-toggle"></span>
-                </span>
-              </ul>
-              :
-              <div>
-                <div className="d-flex justify-content-evenly align-items-center">
-                  {
-                    user?.displayName === null ?
-                      <h6 className="userName">Rohit Sharma</h6> :
-                      <h6 className="userName">{user?.displayName}</h6>
-                  }
-                  {
-                    user?.photoURL === null ?
-                      <img src={userImg} alt="UserPhoto" className="mx-4" /> :
-                      <img src={user.photoURL} alt="UserPhoto" className="mx-4" />
-                  }
-
-                  <button onClick={() => signOut(auth)} className="signout">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="#D9D9DB" className="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                      <path fillRule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
-                      <path fillRule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
+            !user &&
+            <ul className="navbar-nav mb-2 mb-lg-0 ps-sm-0 ps-4">
+              <span className="dropdown account-text">
+                Create Account .
+                <span className="its-free" onClick={handleShow} > It's Free</span>
+                <span className="dropdown-toggle"></span>
+              </span>
+            </ul>
           }
+          {
+            user && 
+            <div  className='d-flex align-items-center'>
+              <div className="d-flex justify-content-evenly align-items-center">
+                {
+                  user?.photoURL === null ?
+                    <img src={userImg} alt="UserPhoto" className="mx-4" /> :
+                    <img src={user?.photoURL} alt="UserPhoto" className="mx-4 rounded-circle border-warning" width={40} height={40} />
+                }
 
-          {/* SignUp-Modal */}
-
-          <Modal
-            show={show}
-            onHide={handleClose}
-            size="lg"
-            aria-labelledby="contained-modal-title-vcenter"
-            centered
-          >
-            <Modal.Header closeButton>
-              <Modal.Title>Let's learn, share & inspire each other with our passion for computer engineering. Sign up now 🤘🏼</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              <div className="row">
-                <div className="col-md-6">
-                  {
-                    toggle ? <ModalForm /> : <ModalForm2 />
-                  }
-                </div>
-                <div className="col-md-6">
-                  <div className="image-content">
-                    <h5 className="acount-heading">Already have an account ?
-                      <span onClick={() => setToggle(false)}> Sign In</span>
-                    </h5>
-                    <img src={Login} alt="" className="img-fluid" />
-                    {
-                      toggle ? <p className="Privacy-policy">By signing up, you agree to our Terms & conditions, Privacy policy</p> : ""
-                    }
-                  </div>
-                </div>
+                <button onClick={() => signOut(auth)} className="signout">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" fill="#D9D9DB" className="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                    <path fillRule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+                    <path fillRule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                  </svg>
+                </button>
               </div>
-            </Modal.Body>
-          </Modal>
+            </div>
+          }
+          {/* SignUp-Modal */}
+          <SigninModal
+            show={show}
+            handleClose={handleClose}
+          ></SigninModal>
+
         </div>
       </div>
     </nav>

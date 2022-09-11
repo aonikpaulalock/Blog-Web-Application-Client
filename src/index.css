@@ -11,6 +11,7 @@ html {
 }
 
 body {
+  /* background-color: #303030 !important; */
   margin: 0;
   font-family: 'IBM Plex Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
