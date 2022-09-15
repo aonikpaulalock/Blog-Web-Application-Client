@@ -21,7 +21,8 @@ const Header = () => {
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent"> <form className="mt-md-0 mt-5 mx-lg-auto form-width ps-sm-0 ps-3">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent"> 
+        <form className="mt-md-0 mt-5 mx-lg-auto form-width ps-sm-0 ps-3">
           <input className="form-control rounded-pill input-field" type="search" placeholder="Search for your favorite groups in ATG" aria-label="Search" />
           <span className="search-position">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">

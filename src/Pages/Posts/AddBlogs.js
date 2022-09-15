@@ -35,7 +35,7 @@ const AddBlogs = ({ handleClose }) => {
             name: data.name
           }
           console.log(blogs)
-          fetch("http://localhost:4200/post", {
+          fetch("https://web-app-server.vercel.app/post", {
             method: "POST",
             headers: {
               'content-type': 'application/json',

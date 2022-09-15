@@ -95,7 +95,7 @@ const PostHeader = () => {
             <button className="post-button me-4" onClick={user && handleShow}>
               Write a Post
             </button>
-            {/* {
+            {
               !user ? <button className="group-button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" fill="currentColor" className="bi bi-people-fill me-1" viewBox="0 0 16 16">
                   <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
@@ -112,7 +112,7 @@ const PostHeader = () => {
                   </svg>
                   Leave Group
                 </button>
-            } */}
+            }
           </div>
         </div>
         <hr className="horizantal-line" />

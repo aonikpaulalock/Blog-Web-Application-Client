@@ -1,14 +1,11 @@
 import { useEffect, useState } from "react"
 
 const useData = () => {
-  const [loading, setLoading] = useState(true)
   const [posts, setPosts] = useState([])
   useEffect(() => {
-    setLoading(true)
-    fetch("http://localhost:4200/posts")
+    fetch("https://web-app-server.vercel.app/posts")
       .then(res => res.json())
       .then(data => {
-        setLoading(false)
         setPosts(data)
       })
   }, [])

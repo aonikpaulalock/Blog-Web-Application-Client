@@ -21,7 +21,7 @@ const Delete = ({ post, blogs, setBlogs }) => {
       reverseButtons: true
     }).then((result) => {
       if (result.isConfirmed) {
-        const url = `http://localhost:4200/post/${id}`
+        const url = `https://web-app-server.vercel.app/post/${id}`
         axios
           .delete(url)
           .then(response => {

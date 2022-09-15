@@ -4,7 +4,6 @@ import { toast } from 'react-toastify';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import auth from '../../Firebase.init';
-import useData from '../../Hooks/useData';
 const EditModal = ({ post, blogs, setBlogs }) => {
   const { register, formState: { errors }, handleSubmit, reset } = useForm();
   const [user] = useAuthState(auth)
@@ -15,21 +14,21 @@ const EditModal = ({ post, blogs, setBlogs }) => {
       subTitlt: data.description
     }
     console.log(blogs);
-    fetch(`http://localhost:4200/post/${post._id}`, {
-      method: 'PUT',
-        // headers: {
+    // fetch(`https://web-app-server.vercel.app/post/${post._id}`, {
+    //   method: 'PUT',
+    //     // headers: {
          
-        // },
-      body: JSON.stringify(blogs)
-    })
-      .then(res => res.json())
-      .then(data => {
-        console.log(data)
-        if (data.modifiedCount > 0) {
-          toast.success(`Successfully Edited Blogs`);
-        }
-        console.log(data);
-      })
+    //     // },
+    //   body: JSON.stringify(blogs)
+    // })
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     console.log(data)
+    //     if (data.modifiedCount > 0) {
+    //       toast.success(`Successfully Edited Blogs`);
+    //     }
+    //     console.log(data);
+    //   })
   }
   return (
     <Form className="from-back ms-3 ms-0" onSubmit={handleSubmit(onSubmit)}>
