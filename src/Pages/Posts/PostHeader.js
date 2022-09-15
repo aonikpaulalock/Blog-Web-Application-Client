@@ -23,11 +23,7 @@ const PostHeader = () => {
             user &&
             <ul className="navbar-nav d-flex flex-row">
               <li>
-                <NavLink to="/post" as={Link}>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/all" as={Link}>All
+                <NavLink to="/post" as={Link}>All
                   <sup>({posts.length})</sup>
                 </NavLink>
               </li>

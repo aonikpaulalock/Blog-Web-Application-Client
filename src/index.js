@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import withReactContent from 'sweetalert2-react-content';
+// import withReactContent from 'sweetalert2-react-content';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom"
 import { QueryClient, QueryClientProvider} from 'react-query'

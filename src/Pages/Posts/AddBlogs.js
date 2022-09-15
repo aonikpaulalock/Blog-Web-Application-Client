@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
@@ -6,7 +6,8 @@ import { toast } from 'react-toastify';
 import auth from '../../Firebase.init';
 import "../../Styles/AddBlogs.css"
 const AddBlogs = ({ handleClose }) => {
-  const [user] = useAuthState(auth)
+  const [user] = useAuthState(auth);
+  const [reload, setReload] = useState(true)
   console.log(user);
   const { register, formState: { errors }, handleSubmit, reset } = useForm();
   const imagekey = "d56f1c4be5a28924ce053f9e7a88d941";
@@ -22,6 +23,7 @@ const AddBlogs = ({ handleClose }) => {
       .then(res => res.json())
       .then(result => {
         if (result.success) {
+          setReload(true)
           const img = result.data.url;
           const blogs = {
             email: user?.email,
@@ -46,6 +48,7 @@ const AddBlogs = ({ handleClose }) => {
                 // reset();
                 handleClose(true)
                 toast.success('Blogs added successfully')
+                setReload(false)
               }
               else {
                 toast.error('Failed to add the Blogs');

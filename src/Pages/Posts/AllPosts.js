@@ -47,7 +47,7 @@ const AllPosts = () => {
                               Delete</h5>
                           </>
                           :
-                          <h5 className="p-3 lh-base text-danger fw-semibold">Can't Edit and Delete</h5>
+                          <h5 className="p-3 lh-base text-danger fw-semibold">Your Aded Blogs can be delete and edit </h5>
                       }
                     </div>
                   </div>

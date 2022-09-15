@@ -25,9 +25,8 @@ function App() {
       <Banner />
       <PostHeader />
       <Routes>
-        {/* <Route path="/post" element={<Posts/>}></Route> */}
         <Route path="/post" element={<Posts />}>
-          <Route index element={<Posts />}></Route>
+          <Route index element={<AllPosts />}></Route>
           <Route path="article" element={<Article />}></Route>
           <Route path="events" element={<Events />}></Route>
           <Route path="education" element={<Education />}></Route>
