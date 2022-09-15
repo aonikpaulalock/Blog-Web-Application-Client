@@ -1,6 +1,9 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../Firebase.init';
 import useData from '../../Hooks/useData';
 const Article = () => {
+  const [user] = useAuthState(auth)
   const [posts] = useData()
   return (
     <div className="container">
@@ -29,7 +32,7 @@ const Article = () => {
                       </button>
                       <div class="dropdown-menu border-0 shadow " aria-labelledby="dropdownMenuButton">
                         {
-                          article.email ?
+                          (article.email === user.email)?
                             <>
                               <h5 class="dropdown-item d-flex align-items-center fw-semibold text-muted">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="rgb(95, 95, 95)" class="bi bi-pencil-square me-3" viewBox="0 0 16 16">

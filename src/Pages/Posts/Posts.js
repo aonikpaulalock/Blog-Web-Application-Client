@@ -11,7 +11,10 @@ const Posts = () => {
     <div className="container">
       <div className="row">
         <div className="col-lg-8 col-12">
-          <Outlet />
+          {
+            user && <Outlet />
+          }
+          
         </div>
         <div className="col-lg-4 col-md-8">
           <div className="input-location">

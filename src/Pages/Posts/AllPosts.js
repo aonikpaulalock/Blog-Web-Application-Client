@@ -4,6 +4,7 @@ import auth from '../../Firebase.init';
 import useData from '../../Hooks/useData';
 import "../../Styles/PostsStyles/AllPosts.css"
 const AllPosts = () => {
+  const [user] = useAuthState(auth)
   const [posts] = useData()
   return (
     <div className="container">
@@ -31,7 +32,7 @@ const AllPosts = () => {
                     </button>
                     <div class="dropdown-menu border-0 shadow " aria-labelledby="dropdownMenuButton">
                       {
-                        post.email ?
+                        (post.email === user.email) ?
                           <>
                             <h5 class="dropdown-item d-flex align-items-center fw-semibold text-muted">
                               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="rgb(95, 95, 95)" class="bi bi-pencil-square me-3" viewBox="0 0 16 16">
@@ -47,7 +48,7 @@ const AllPosts = () => {
                           </>
                           :
                           <h5 className="p-3 lh-base text-danger fw-semibold">Can't Edit and Delete</h5>
-                     }
+                      }
                     </div>
                   </div>
                 </div>
